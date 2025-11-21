@@ -20,7 +20,7 @@ module.exports = {
       },
       precio: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       categoriaId: {
         type: Sequelize.INTEGER,
@@ -30,6 +30,16 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL' // O 'CASCADE' / 'RESTRICT' según tu lógica de negocio
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },
