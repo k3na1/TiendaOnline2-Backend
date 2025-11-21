@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       // 2. Tiene muchos Detalles (Productos comprados)
       Receipt.hasMany(models.ReceiptDetail, {
         foreignKey: 'receiptId',
-        as: 'detalles'
+        as: 'items'
       });
     }
   }
